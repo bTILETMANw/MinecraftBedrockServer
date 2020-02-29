@@ -204,7 +204,7 @@ fi
 
 # Retrieve latest version of Minecraft Bedrock dedicated server
 echo "Checking for the latest version of Minecraft Bedrock server..."
-wget -O downloads/version.html https://minecraft.net/en-us/download/server/bedrock/
+wget -O downloads/version.html https://minecraft.net/en-us/download/server/bedrock
 DownloadURL=$(grep -o 'https://minecraft.azureedge.net/bin-linux/[^"]*' downloads/version.html)
 DownloadFile=$(echo "$DownloadURL" | sed 's#.*/##')
 echo "$DownloadURL"
