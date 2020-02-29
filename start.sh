@@ -35,12 +35,12 @@ fi
 echo "Checking for the latest version of Minecraft Bedrock server ..."
 
 # Test internet connectivity first
-wget --spider --quiet https://minecraft.net/en-us/download/server/bedrock/
+wget --spider --quiet https://minecraft.net/en-us/download/server/bedrock
 if [ "$?" != 0 ]; then
     echo "Unable to connect to update website (internet connection may be down).  Skipping update ..."
 else
     # Download server index.html to check latest version
-    wget -O downloads/version.html https://minecraft.net/en-us/download/server/bedrock/
+    wget -O downloads/version.html https://minecraft.net/en-us/download/server/bedrock
     DownloadURL=$(grep -o 'https://minecraft.azureedge.net/bin-linux/[^"]*' downloads/version.html)
     DownloadFile=$(echo "$DownloadURL" | sed 's#.*/##')
 
